@@ -1,0 +1,25 @@
+
+
+<%= render 'navebar' %>
+<% current_auther.books.each do |book|  %>
+
+    <div class="container">
+    <div class=" d-flex flex-direction-row justify-content-between mb-2 mt-2 ms-5  bg-light">
+    <h3 class="ms-5"><b><%=book.title %></b></h3>
+      <div class="d-flex justify-content-end ">
+        <%= button_to 'Edit', edit_book_path(book), method: 'get', class:'btn btn-info me-2'%>
+
+        <%= button_to 'Delete', book_path(book), method: 'delete', data: { confirm: 'Are you sure?' }, class:'btn btn-danger me-2' %>
+
+        <%= button_to 'Detail', book_path(book), method: 'get', class:'btn btn-success'%>
+      </div>
+    </div>
+
+
+    </div>
+
+
+
+<% end %>
+
+

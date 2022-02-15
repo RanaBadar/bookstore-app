@@ -1,0 +1,29 @@
+
+<style>
+  img{
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+  }
+</style>
+<div class="container">
+  <div class="card mb-3 h-25 w-100">
+
+    <%= link_to "Download", @book.file , download: '',class:'btn btn-primary'%>
+    <%= link_to "view book", @book.file,class:'btn btn-success' %>
+
+  <div class="card-body">
+    <h4>Book Title</h4>
+    <p class="card-title"> <%=  @book.title%></p>
+    <h4>Description</h4>
+    <p class="card-text">    <%= @book.description %></p>
+    <h4>Author Name</h4>
+    <p class="card-text"> <%= @book.name %></p>
+    <h4>Auther Mail </h4>
+    <p class="card-text"><small class="text-muted"> <%= @book.mail %></small></p>
+
+    <%= link_to "back", books_path, class:'btn btn-primary' %>
+
+  </div>
+</div>
+</div>

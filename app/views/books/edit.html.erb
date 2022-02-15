@@ -1,0 +1,15 @@
+<%= render 'navebar' %>
+<%= form_with  model: @book do |form| %>
+  <%= form.label :title, "Book Title:" %>
+  <%= form.text_field :title, required: true %><br>
+  <%= form.label :description, "Book Description:" %>
+  <%= form.text_area :description, required: true %><br>
+  <%= form.label :name, "Author Name" %>
+  <%= form.text_field :name, required: true %><br>
+  <%= form.label :mail, "Author Mail ID" %>
+  <%= form.email_field :mail, required: true %><br>
+  <%= form.label :mail, "Book Image" %>
+  <%= form.file_field :image, required: true %><br>
+  <%= form.number_field :auther_id, id: :book_auther_id, value:current_auther.id ,type: :hidden , required: true %><br>
+  <%= form.submit %>
+<% end %>
